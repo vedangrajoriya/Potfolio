@@ -77,7 +77,7 @@ const Hero: React.FC = () => {
           >
             <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-primary-400/30 shadow-xl shadow-primary-400/20">
               <img 
-                src="vedang.jpg" 
+                src="vedang.png" 
                 alt="Vedang Rajoriya" 
                 className="w-full h-full object-cover"
               />
