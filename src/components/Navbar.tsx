@@ -68,7 +68,7 @@ const Navbar: React.FC = () => {
 
             <div className="flex items-center space-x-4 ml-4">
               <a 
-                href="https://github.com/" 
+                href="https://github.com/vedangrajoriya" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
@@ -76,7 +76,7 @@ const Navbar: React.FC = () => {
                 <Github size={20} />
               </a>
               <a 
-                href="https://linkedin.com/" 
+                href="https://www.linkedin.com/in/vedang-rajoriya-27a447246/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
