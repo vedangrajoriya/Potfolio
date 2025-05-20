@@ -65,7 +65,7 @@ const Hero: React.FC = () => {
                 Contact Me
               </a>
               <a 
-                href="https://drive.google.com/file/d/1UbZ_6FWEp68nXdzxefmGFyMMg_K6_Art/view?usp=drive_link" 
+                href="/public/vedang.png" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="bg-primary-400 text-white font-medium py-2 px-6 rounded-full hover:bg-primary-300 transition-colors shadow-lg"
