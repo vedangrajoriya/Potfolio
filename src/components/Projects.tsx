@@ -141,7 +141,7 @@ const Projects: React.FC = () => {
         </motion.h2>
 
         <div className="space-y-16">
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <motion.div
               key={project.id}
               variants={itemVariants}
