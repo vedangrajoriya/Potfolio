@@ -4,7 +4,13 @@ import { ArrowDown } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const scrollToNext = () => {
-    window.location.hash = '#projects';
+    const projectsSection = document.getElementById('projects');
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      console.log('Projects section not found');
+      window.location.hash = '#projects'; // Fallback to hash routing
+    }
   };
 
   const container = {
