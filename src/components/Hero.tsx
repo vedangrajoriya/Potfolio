@@ -65,9 +65,10 @@ const Hero: React.FC = () => {
                 Contact Me
               </a>
               <a 
-                href="/public/vedang.png" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+                href="public/My CV.pdf" // Update this path to match your CV file name in the public folder
+                target="_blank"
+                rel="noopener noreferrer"
+                download="Vedang_Rajoriya_Resume.pdf" // Add download attribute with desired filename
                 className="bg-primary-400 text-white font-medium py-2 px-6 rounded-full hover:bg-primary-300 transition-colors shadow-lg"
               >
                 Download CV

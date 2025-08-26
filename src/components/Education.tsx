@@ -30,9 +30,12 @@ const Education: React.FC = () => {
       link: "https://www.credly.com/badges/38473296-a53f-471a-87eb-4bb3689e118c/linked_in_profile"
     },
     {
-      title: "Introduction to Cybersecurity – Cisco",
+      title: "CCNA (All three modules) – Cisco",
       year: "2025",
-      link: "https://www.credly.com/badges/8ce96705-78f6-4b62-82ad-d3d72ead1995/linked_in_profile"
+      links: [
+        "https://www.credly.com/badges/e9598e8e-492a-4cff-a207-4b7ac7e6b0ce/linked_in_profile",
+        "https://www.credly.com/badges/bfa00b50-c86a-4e54-9ceb-5fdc0ec2eafb/linked_in_profile"
+      ]
     },
     {
       title: "Python Essentials 1 – Cisco",
@@ -116,18 +119,41 @@ const Education: React.FC = () => {
             <h3 className="text-xl sm:text-2xl font-bold text-white mb-6">Professional Certifications</h3>
             <div className="space-y-4">
               {certifications.map((cert, index) => (
-                <a 
+                <div 
                   key={index}
-                  href={cert.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="block p-4 bg-dark-700/50 rounded-lg hover:bg-dark-600/50 transition-colors"
                 >
                   <div className="flex justify-between items-center">
-                    <p className="text-gray-300 hover:text-primary-400 transition-colors">{cert.title}</p>
+                    <div className="flex-1">
+                      <p className="text-gray-300">{cert.title}</p>
+                      {cert.links ? (
+                        <div className="flex gap-2 mt-1">
+                          {cert.links.map((link, i) => (
+                            <a
+                              key={i}
+                              href={link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-sm text-primary-400 hover:text-primary-300 transition-colors"
+                            >
+                              Badge {i + 1}
+                            </a>
+                          ))}
+                        </div>
+                      ) : (
+                        <a
+                          href={cert.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sm text-primary-400 hover:text-primary-300 transition-colors"
+                        >
+                          View Certificate
+                        </a>
+                      )}
+                    </div>
                     <span className="text-sm text-primary-400">{cert.year}</span>
                   </div>
-                </a>
+                </div>
               ))}
             </div>
           </motion.div>
