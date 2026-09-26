@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import Education from './components/Education';
+import Experience from './components/Experience';
+import Skills from './components/Skills';
 import Projects from './components/Projects';
+import Education from './components/Education';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import LoadingScreen from './components/LoadingScreen';
@@ -12,10 +14,10 @@ function App() {
 
   useEffect(() => {
     // Simulate loading time
-    const timer = setTimeout(() => setIsLoading(false), 3000);
+    const timer = setTimeout(() => setIsLoading(false), 2000);
 
     // Update page title
-    document.title = 'Vedang Rajoriya | Python Developer & ML Engineer';
+    document.title = 'Vedang Rajoriya | AI Engineer & Systems Architect';
 
     return () => clearTimeout(timer);
   }, []);
@@ -25,12 +27,16 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-dark-700 text-white">
+    <div className="min-h-screen bg-dark-700 text-white selection:bg-primary-500 selection:text-white">
       <Navbar />
-      <Hero />
-      <Education />
-      <Projects />
-      <Contact />
+      <main>
+        <Hero />
+        <Experience />
+        <Skills />
+        <Projects />
+        <Education />
+        <Contact />
+      </main>
       <Footer />
     </div>
   );

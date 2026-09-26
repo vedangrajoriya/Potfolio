@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { ArrowUpRight, Cpu, Server, BarChart3 } from 'lucide-react';
+import { ArrowUpRight, Cpu, Server, BarChart3, Bot, Shield, BrainCircuit, Briefcase, Code2, Layers, Sparkles, Users } from 'lucide-react';
 
 const Projects: React.FC = () => {
   const [ref, inView] = useInView({
@@ -14,13 +14,13 @@ const Projects: React.FC = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2, // Stagger the children's animations
+        staggerChildren: 0.2,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 50, scale: 0.8 }, // Start a bit faded, lower, and smaller
+    hidden: { opacity: 0, y: 50, scale: 0.8 },
     visible: {
       opacity: 1,
       y: 0,
@@ -28,9 +28,9 @@ const Projects: React.FC = () => {
       transition: {
         duration: 0.6,
         type: "spring",
-        stiffness: 60, // Adjust stiffness for a bouncier effect
-        damping: 10,   // Control the spring's oscillation
-        delay: 0.1,    // Add a small delay for each item
+        stiffness: 60,
+        damping: 10,
+        delay: 0.1,
       },
     },
   };
@@ -38,9 +38,95 @@ const Projects: React.FC = () => {
   const projects = [
     {
       id: 1,
+      title: "AI Hospitality Multimodal & Multi-Agent AI System",
+      link: "https://github.com/vedangrajoriya/Final-Project",
+      description: "Architected an autonomous hospitality and travel platform powered by 5+ specialized AI agents and Generative AI workflows to automate end-to-end trip planning, hotel recommendations, and personalized travel assistance.",
+      steps: [
+        {
+          icon: <Bot size={20} className="text-primary-400" />,
+          title: "Multi-Agent Architecture",
+          description: "Engineered 5+ collaborative AI agents managing itinerary synthesis, accommodation matching, route mapping, and budget estimation."
+        },
+        {
+          icon: <Cpu size={20} className="text-primary-400" />,
+          title: "Multimodal Processing",
+          description: "Processed dynamic multimodal inputs (destination, duration, budget, travel style) into instant, tailored schedules."
+        },
+        {
+          icon: <Server size={20} className="text-primary-400" />,
+          title: "Conversational Assistant",
+          description: "Integrated conversational travel assistant handling live adjustments and recommendation reranking."
+        }
+      ]
+    },
+    {
+      id: 2,
+      title: "AI-Powered Career Advisor & Interview Prep",
+      link: "https://ed-guide.netlify.app/",
+      description: "Architected a comprehensive AI-driven career readiness platform built with the MERN stack providing personalized career roadmaps, skill evaluation, job matching, and realistic mock interview coaching.",
+      features: [
+        {
+          title: "Career Guidance Chatbot",
+          description: "Interactive AI chatbot giving tailored advice on industry roles, skills gap analysis, and structured milestones."
+        },
+        {
+          title: "AI Mock Interview Simulator",
+          description: "Conducts realistic technical/behavioral interviews with real-time semantic evaluation and feedback."
+        },
+        {
+          title: "Job & Internship Listings",
+          description: "Integrated skill analysis and curated internship/job opportunities based on candidate progress."
+        }
+      ]
+    },
+    {
+      id: 3,
+      title: "Intrusion Detection System (IDS) with Machine Learning",
+      link: "https://github.com/vedangrajoriya/Intrusion-detection-system-using-machine-learning..",
+      description: "Developed an intelligent network intrusion detection system analyzing real-time network traffic patterns to classify, detect, and isolate cyber threats using the CICIDS2017 benchmark dataset.",
+      steps: [
+        {
+          icon: <Shield size={20} className="text-primary-400" />,
+          title: "Data Processing & Feature Engineering",
+          description: "Pre-processed and analyzed 125,000+ network traffic instances with mutual information scoring and PCA dimensionality reduction."
+        },
+        {
+          icon: <BrainCircuit size={20} className="text-primary-400" />,
+          title: "Model Training & Tuning",
+          description: "Trained scikit-learn and XGBoost classifiers with extensive hyperparameter tuning achieving 94% detection accuracy."
+        },
+        {
+          icon: <BarChart3 size={20} className="text-primary-400" />,
+          title: "Result",
+          description: "Achieved 94% accuracy with 35% reduction in false positives, enabling reliable real-time cyber threat detection."
+        }
+      ]
+    },
+    {
+      id: 4,
+      title: "Talent AI – AI-Powered HR Automation Platform",
+      link: "https://github.com/vedangrajoriya/Talent-AI",
+      description: "Built an innovative AI-powered application using Next.js and Firebase Studio, designed to streamline and automate key HR processes. Leverages Genkit for sophisticated AI flow management for resume screening and job description generation.",
+      features: [
+        {
+          title: "Automate Resume Screening",
+          description: "Intelligently analyze and filter candidate resumes based on predefined criteria, significantly reducing manual effort and improving hiring efficiency."
+        },
+        {
+          title: "Generate Job Descriptions",
+          description: "Create compelling and accurate job descriptions by leveraging AI to understand role requirements and industry best practices."
+        },
+        {
+          title: "Modern, Responsive UI",
+          description: "Crafted with React, styled with Tailwind CSS and Shadcn UI, ensuring a seamless and intuitive user experience."
+        }
+      ]
+    },
+    {
+      id: 5,
       title: "Cryptocurrency Price Prediction Project",
       link: "https://crypto-pred.netlify.app/",
-      description: "A machine learning project that utilizes LSTM models to predict cryptocurrency prices with high accuracy.",
+      description: "A deep learning financial forecasting application utilizing LSTM recurrent neural networks to model volatile cryptocurrency market trends with live API streaming.",
       steps: [
         {
           icon: <Cpu size={20} className="text-primary-400" />,
@@ -56,67 +142,6 @@ const Projects: React.FC = () => {
           icon: <BarChart3 size={20} className="text-primary-400" />,
           title: "Result",
           description: "Delivered real-time predictions addressing data inconsistencies and overfitting challenges."
-        }
-      ]
-    },
-    {
-      id: 2,
-      title: "Modern Voice Recorder Web Application",
-      link: "https://audio-processor.netlify.app/",
-      description: "A feature-rich voice recording web application with real-time visualization and cloud storage.",
-      features: [
-        {
-          title: "Features",
-          description: "Real-time waveform visualization, high-quality recording, playback, and cloud-based storage with synchronization."
-        },
-        {
-          title: "Security",
-          description: "Enterprise-grade security using Supabase Auth and database Row Level Security for safe data transmission."
-        },
-        {
-          title: "Users",
-          description: "Designed for professionals, students, and content creators needing reliable and easy voice recording solutions."
-        }
-      ]
-    },
-    {
-      id: 3,
-      title: "Educational Website with Skill Analysis & Career Roadmaps",
-      link: "https://github.com/vedangrajoriya/Educational-Website",
-      description: "A comprehensive educational platform that provides personalized learning paths and job opportunities.",
-      features: [
-        {
-          title: "Interactive Learning",
-          description: "AI-powered skill analysis and personalized career roadmaps for skill development."
-        },
-        {
-          title: "Job & Internship Listings",
-          description: "Connecting users with real-world opportunities to accelerate professional growth."
-        },
-        {
-          title: "Scalability & UX Optimization",
-          description: "Focused on seamless user experiences with scalable platform architecture."
-        }
-      ],
-      image: "https://images.pexels.com/photos/6694543/pexels-photo-6694543.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-    },
-    {
-      id: 4,
-      title: "Talent AI – AI-Powered HR Automation Platform",
-      link: "https://github.com/vedangrajoriya/Talent-AI",
-      description: "This project introduces an innovative, AI-powered application developed using Next.js and Firebase Studio, designed to streamline and automate key HR processes. Leveraging the advanced capabilities of Genkit for sophisticated AI flow management, this platform offers intelligent solutions for resume screening and job description generation.",
-      features: [
-        {
-          title: "Automate Resume Screening",
-          description: "Intelligently analyze and filter candidate resumes based on predefined criteria, significantly reducing manual effort and improving the efficiency of the initial hiring stages."
-        },
-        {
-          title: "Generate Job Descriptions",
-          description: "Create compelling and accurate job descriptions by leveraging AI to understand role requirements and industry best practices, aiding in attracting suitable talent."
-        },
-        {
-          title: "Modern, Responsive UI",
-          description: "Crafted with React, styled with Tailwind CSS and Shadcn UI, ensuring a seamless and intuitive user experience."
         }
       ]
     }
