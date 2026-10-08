@@ -9,9 +9,7 @@ import {
   X, 
   CheckCircle, 
   Sparkles,
-  BookOpen,
-  ShieldCheck,
-  Building
+  BookOpen
 } from 'lucide-react';
 
 interface Certification {
@@ -51,6 +49,7 @@ const Education: React.FC = () => {
   };
 
   const certifications: Certification[] = [
+    // Datagami & Project Certs
     {
       title: 'Agentic AI (80-Hour Structured Project)',
       issuer: 'Datagami (nasscom & IBM Gold Partner)',
@@ -81,31 +80,117 @@ const Education: React.FC = () => {
       imageUrl: '/certificates/devops-datagami.png',
       highlight: true
     },
+    // McKinsey Credly
     {
-      title: 'Deep Learning Essentials and AI Fundamentals',
+      title: 'McKinsey.org Forward Program',
+      issuer: 'McKinsey.org',
+      year: '2025',
+      category: 'leadership',
+      verifyUrl: 'https://www.credly.com/badges/985ac83f-7a00-4ab1-83ce-e8dfc3312e32',
+      highlight: true
+    },
+    // IBM & IBM SkillsBuild Credly
+    {
+      title: 'Deep Learning Essentials',
       issuer: 'IBM',
       year: '2025',
       category: 'ai',
-      verifyUrl: 'https://www.credly.com/badges/38473296-a53f-471a-87eb-4bb3689e118c/linked_in_profile',
+      verifyUrl: 'https://www.credly.com/badges/38473296-a53f-471a-87eb-4bb3689e118c',
       highlight: true
     },
     {
-      title: 'CCNA (All 3 Modules: Networks, Switching, Enterprise)',
+      title: 'Artificial Intelligence Fundamentals',
+      issuer: 'IBM SkillsBuild',
+      year: '2025',
+      category: 'ai',
+      verifyUrl: 'https://www.credly.com/badges/3014137e-e529-4463-bdff-48c1503c2742',
+      highlight: true
+    },
+    {
+      title: 'IBM Z Day 2025 - AI & Data',
+      issuer: 'IBM',
+      year: '2025',
+      category: 'ai',
+      verifyUrl: 'https://www.credly.com/badges/3ac845f9-d9d8-4eaf-a041-f9209089b79e'
+    },
+    {
+      title: 'IBM Z Day 2025 - IBM Z Skills',
+      issuer: 'IBM',
+      year: '2025',
+      category: 'cloud',
+      verifyUrl: 'https://www.credly.com/badges/7508f93f-159b-46b1-89da-d115fe4c18e8'
+    },
+    {
+      title: 'IBM Z Day 2025 - Modernization',
+      issuer: 'IBM',
+      year: '2025',
+      category: 'devops',
+      verifyUrl: 'https://www.credly.com/badges/2123db93-b66f-49f2-a6ad-c8e52c4600cd'
+    },
+    {
+      title: 'IBM Z Day 2025 - Security',
+      issuer: 'IBM',
+      year: '2025',
+      category: 'network',
+      verifyUrl: 'https://www.credly.com/badges/58ffa626-8061-4731-9bb2-90fca5401f9e'
+    },
+    // Cisco Credly
+    {
+      title: 'CCNA: Switching, Routing, and Wireless Essentials',
       issuer: 'Cisco',
       year: '2025',
       category: 'network',
+      verifyUrl: 'https://www.credly.com/badges/bfa00b50-c86a-4e54-9ceb-5fdc0ec2eafb',
+      highlight: true
+    },
+    {
+      title: 'CCNA: Introduction to Networks',
+      issuer: 'Cisco',
+      year: '2025',
+      category: 'network',
+      verifyUrl: 'https://www.credly.com/badges/e9598e8e-492a-4cff-a207-4b7ac7e6b0ce'
+    },
+    {
+      title: 'Data Analytics Essentials',
+      issuer: 'Cisco',
+      year: '2025',
+      category: 'ai',
+      verifyUrl: 'https://www.credly.com/badges/ae76e9bb-24f1-4a1c-af28-769fef94aff9'
+    },
+    {
+      title: 'Python Essentials 1 & 2',
+      issuer: 'Cisco',
+      year: '2025',
+      category: 'devops',
       badges: [
-        { name: 'Mod 1', url: 'https://www.credly.com/badges/3014137e-e529-4463-bdff-48c1503c2742/public_url' },
-        { name: 'Mod 2', url: 'https://www.credly.com/badges/bfa00b50-c86a-4e54-9ceb-5fdc0ec2eafb/linked_in_profile' },
-        { name: 'Mod 3', url: 'https://www.credly.com/badges/3ac845f9-d9d8-4eaf-a041-f9209089b79e/linked_in_profile' }
+        { name: 'Part 1', url: 'https://www.credly.com/badges/715672e2-b3a2-44db-8c41-93364fdb14d8' },
+        { name: 'Part 2', url: 'https://www.credly.com/badges/0446301e-b744-4034-86e5-36b3ec651266' }
       ]
     },
+    {
+      title: 'Introduction to Cybersecurity',
+      issuer: 'Cisco',
+      year: '2025',
+      category: 'network',
+      verifyUrl: 'https://www.credly.com/badges/8ce96705-78f6-4b62-82ad-d3d72ead1995'
+    },
+    // AWS Credly
+    {
+      title: 'AWS Cloud Clubs Generative AI Camper',
+      issuer: 'Amazon Web Services (AWS Community)',
+      year: '2024',
+      category: 'cloud',
+      verifyUrl: 'https://www.credly.com/badges/2248e4b3-61bd-4dca-8d34-ef3ef30860bb',
+      highlight: true
+    },
+    // Oracle & Others
     {
       title: 'Cloud Infrastructure 2025 Certified Generative AI Professional',
       issuer: 'Oracle',
       year: '2025',
       category: 'cloud',
-      verifyUrl: 'https://catalog-education.oracle.com/ords/certview/sharebadge?id=0CC1AFADE06FAA221E71A01304C5D875B46A57F6E74DD207151F379F3655F821'
+      verifyUrl: 'https://catalog-education.oracle.com/ords/certview/sharebadge?id=0CC1AFADE06FAA221E71A01304C5D875B46A57F6E74DD207151F379F3655F821',
+      highlight: true
     },
     {
       title: 'AI Foundation Associate',
@@ -115,48 +200,11 @@ const Education: React.FC = () => {
       verifyUrl: 'https://catalog-education.oracle.com/ords/certview/sharebadge?id=48911BADF496A31CE43C9429ACEA9D4354D794CB0DE4BBB4ACA81314C4CB08E0'
     },
     {
-      title: 'AWS Cloud Clubs Generative AI Camper',
-      issuer: 'Amazon Web Services (AWS)',
-      year: '2024',
-      category: 'cloud',
-      verifyUrl: 'https://www.credly.com/badges/2248e4b3-61bd-4dca-8d34-ef3ef30860bb/linked_in_profile'
-    },
-    {
-      title: 'Career Essentials in Cybersecurity',
-      issuer: 'Microsoft & LinkedIn',
-      year: '2025',
-      category: 'network',
-      verifyUrl: 'https://www.credly.com/badges/985ac83f-7a00-4ab1-83ce-e8dfc3312e32/linked_in_profile'
-    },
-    {
-      title: 'Python Essentials 1 & 2',
-      issuer: 'Cisco',
-      year: '2025',
-      category: 'devops',
-      badges: [
-        { name: 'Part 1', url: 'https://www.credly.com/badges/715672e2-b3a2-44db-8c41-93364fdb14d8/linked_in_profile' },
-        { name: 'Part 2', url: 'https://www.credly.com/badges/0446301e-b744-4034-86e5-36b3ec651266/linked_in_profile' }
-      ]
-    },
-    {
       title: 'AWS Solutions Architecture Job Simulation',
       issuer: 'Forage',
       year: '2025',
       category: 'cloud',
       verifyUrl: 'https://drive.google.com/file/d/1Ng4eLGpenMNTMxF391ulzsBdXcgKtHwj/view?usp=drive_link'
-    },
-    {
-      title: 'McKinsey Forward Learning Program',
-      issuer: 'McKinsey & Company',
-      year: '2025',
-      category: 'leadership',
-      highlight: true
-    },
-    {
-      title: 'IBM Z-Days Professional Badges (AI & Cloud)',
-      issuer: 'IBM',
-      year: '2025',
-      category: 'ai'
     }
   ];
 
@@ -262,7 +310,7 @@ const Education: React.FC = () => {
                 <ul className="space-y-2 text-xs sm:text-sm text-gray-300">
                   <li className="flex items-start gap-2">
                     <CheckCircle size={15} className="text-emerald-400 mt-0.5 shrink-0" />
-                    <span>Completed 10+ industry certifications in AI/ML, Cloud, and Networking.</span>
+                    <span>Completed 15+ industry certifications in AI/ML, Cloud, and Networking.</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle size={15} className="text-emerald-400 mt-0.5 shrink-0" />
@@ -273,6 +321,29 @@ const Education: React.FC = () => {
                     <span>Led multidisciplinary engineering teams for capstone projects.</span>
                   </li>
                 </ul>
+              </div>
+
+              {/* Credly Profile External Link Box */}
+              <div className="pt-4 border-t border-dark-500/60">
+                <a
+                  href="https://www.credly.com/users/vedang-rajoriya"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between p-3.5 rounded-xl bg-gradient-to-r from-primary-500/10 to-secondary-500/10 border border-primary-400/30 hover:border-primary-400/60 transition-all group"
+                >
+                  <div className="flex items-center gap-2.5">
+                    <Award size={18} className="text-primary-400 group-hover:scale-110 transition-transform" />
+                    <div>
+                      <div className="text-sm font-semibold text-white group-hover:text-primary-300 transition-colors">
+                        Credly Verified Profile
+                      </div>
+                      <div className="text-xs text-gray-400">
+                        View 14 verified badges & digital transcripts
+                      </div>
+                    </div>
+                  </div>
+                  <ExternalLink size={16} className="text-primary-400 group-hover:translate-x-0.5 transition-transform" />
+                </a>
               </div>
             </motion.div>
 
@@ -288,7 +359,7 @@ const Education: React.FC = () => {
                     Professional Certifications & Badges
                   </h3>
                   <p className="text-xs sm:text-sm text-gray-400 mt-1">
-                    Verified credentials from IBM, Cisco, Oracle, AWS, Datagami & Microsoft.
+                    Verified credentials from McKinsey, IBM, Cisco, Oracle, AWS, Datagami & Microsoft.
                   </p>
                 </div>
 
@@ -299,6 +370,7 @@ const Education: React.FC = () => {
                     { label: 'AI/ML', val: 'ai' },
                     { label: 'Cloud', val: 'cloud' },
                     { label: 'Network', val: 'network' },
+                    { label: 'DevOps', val: 'devops' },
                   ].map((tab) => (
                     <button
                       key={tab.val}

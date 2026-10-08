@@ -1,51 +1,116 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Briefcase, Calendar, MapPin, Sparkles, CheckCircle2, ChevronRight } from 'lucide-react';
+import {
+  Briefcase,
+  Calendar,
+  MapPin,
+  Bot,
+  BrainCircuit,
+  Layers,
+  Code2,
+  Workflow,
+  Sparkles
+} from 'lucide-react';
+
+interface ExperienceStep {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}
 
 interface ExperienceItem {
+  id: number;
   role: string;
   company: string;
   period: string;
   location: string;
   isCurrent: boolean;
   summary: string;
-  highlights: string[];
+  steps: ExperienceStep[];
   skills: string[];
 }
 
 const experiences: ExperienceItem[] = [
   {
+    id: 1,
     role: 'AI Engineer',
     company: 'ITGeeks',
     period: 'July 2026 – Present',
     location: 'Indore, India',
     isCurrent: true,
     summary:
-      'Spearheading the engineering and deployment of enterprise-grade Agentic AI systems, autonomous multi-agent workflows, and high-performance Generative AI pipelines.',
-    highlights: [
-      'Architecting and deploying production-ready Agentic AI systems and LLM orchestration workflows with dynamic reasoning and tool execution.',
-      'Engineering context-aware Retrieval-Augmented Generation (RAG) and Graph RAG pipelines with intelligent retrieval, reranking, and semantic caching.',
-      'Designing and optimizing high-throughput, low-latency REST APIs using FastAPI/Flask integrated with scalable cloud infrastructures.',
-      'Collaborating with cross-functional teams to integrate generative intelligence, automating complex business processes and decision systems.'
+      'Spearheading enterprise AI initiatives by architecting end-to-end intelligent automation pipelines, training and fine-tuning custom AI models, and delivering scalable production web applications and internal enterprise systems.',
+    steps: [
+      {
+        icon: <Bot size={20} className="text-primary-400" />,
+        title: 'End-to-End AI Automation',
+        description:
+          'Architected and deployed multi-agent AI automation workflows for complex, high-latency manual business processes, substantially minimizing human intervention and operational overhead.'
+      },
+      {
+        icon: <BrainCircuit size={20} className="text-primary-400" />,
+        title: 'Custom Model Training & Fine-Tuning',
+        description:
+          'Trained, fine-tuned, and benchmarked domain-specific machine learning and large language models, optimizing inference speed, context retrieval, and decision accuracy across production workloads.'
+      },
+      {
+        icon: <Layers size={20} className="text-primary-400" />,
+        title: 'Enterprise CRMs & Internal LMS',
+        description:
+          'Delivered robust, production-grade enterprise web applications including proprietary AI-augmented CRM systems, company-wide Learning Management Systems (LMS), and internal productivity suites.'
+      }
     ],
-    skills: ['Agentic AI', 'Generative AI', 'Graph RAG', 'FastAPI', 'LLM Orchestration', 'Python', 'Cloud Architecture']
+    skills: [
+      'Agentic AI Workflows',
+      'AI Automation',
+      'Model Training & Fine-Tuning',
+      'Enterprise CRMs & LMS',
+      'FastAPI',
+      'Graph RAG',
+      'Python',
+      'Cloud Architecture'
+    ]
   },
   {
+    id: 2,
     role: 'AI & ML Engineer',
     company: 'Incrivelsoft Private Limited',
     period: 'Nov 2025 – June 2026',
     location: 'Indore, India',
     isCurrent: false,
     summary:
-      'Engineered and optimized 10+ production AI agent automations and enterprise RAG pipelines, achieving measurable accuracy and reliability improvements.',
-    highlights: [
-      'Engineered 10+ production-grade AI agent automations across diverse business use cases, designing specialized workflows for task-specific reasoning, decision-making, and execution.',
-      'Applied prompt engineering and model/retrieval optimization, improving prediction consistency by 20–30% and reducing irrelevant outputs by ~25%.',
-      'Built production-grade RAG pipelines for individual agents with retrieval, reranking, query optimization, and Graph RAG for context-aware and multi-hop reasoning.',
-      'Implemented robust data pipelines and model validation protocols to ensure enterprise reliability and reproducible ML outputs.'
+      'Engineered and deployed 10+ production-grade autonomous AI agents and enterprise RAG pipelines, significantly improving response accuracy, retrieval precision, and computational efficiency.',
+    steps: [
+      {
+        icon: <Bot size={20} className="text-primary-400" />,
+        title: 'Production AI Agents',
+        description:
+          'Engineered 10+ production-grade AI agent automations across diverse business verticals, implementing task-specific reasoning loops, dynamic tool calling, and multi-step execution.'
+      },
+      {
+        icon: <Workflow size={20} className="text-primary-400" />,
+        title: 'Advanced RAG & Graph RAG',
+        description:
+          'Built enterprise-grade RAG and Graph RAG architectures incorporating hybrid vector retrieval, contextual reranking, and semantic caching for complex multi-hop reasoning.'
+      },
+      {
+        icon: <Code2 size={20} className="text-primary-400" />,
+        title: 'Prompt & Model Optimization',
+        description:
+          'Applied structured prompt engineering and inference optimization protocols, elevating prediction consistency by 20–30% and cutting irrelevant generation by ~25%.'
+      }
     ],
-    skills: ['LangChain', 'Graph RAG', 'Prompt Engineering', 'PyTorch', 'Vector Search', 'Model Optimization', 'Python']
+    skills: [
+      'LangChain',
+      'Graph RAG',
+      'Agentic Systems',
+      'Prompt Engineering',
+      'PyTorch',
+      'Vector Search',
+      'Model Optimization',
+      'Python'
+    ]
   }
 ];
 
@@ -60,58 +125,71 @@ const Experience: React.FC = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.25,
+        staggerChildren: 0.2,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+    hidden: { opacity: 0, y: 50, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.6,
+        type: 'spring',
+        stiffness: 60,
+        damping: 10,
+        delay: 0.1,
+      },
+    },
   };
 
   return (
-    <section id="experience" ref={ref} className="py-24 bg-dark-700 relative overflow-hidden">
+    <section id="experience" ref={ref} className="py-20 bg-dark-700 relative overflow-hidden">
       {/* Background glow decoration */}
       <div className="absolute top-1/4 left-0 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-secondary-500/10 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={inView ? 'visible' : 'hidden'}
-        >
-          {/* Section Header */}
-          <motion.div variants={itemVariants} className="text-center mb-16">
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase bg-primary-400/10 text-primary-300 border border-primary-400/20 mb-3">
-              <Sparkles size={14} className="text-primary-400" />
-              Career Journey
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate={inView ? 'visible' : 'hidden'}
+        className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
+      >
+        <motion.div variants={itemVariants} className="text-center mb-16">
+          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase bg-primary-400/10 text-primary-300 border border-primary-400/20 mb-3">
+            <Sparkles size={14} className="text-primary-400" />
+            Career Journey
+          </span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+            Work{' '}
+            <span className="bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">
+              Experience
             </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
-              Work{' '}
-              <span className="bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">
-                Experience
-              </span>
-            </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto text-base sm:text-lg">
-              Demonstrated track record of delivering production-ready AI agent systems, advanced RAG architectures, and scalable intelligent solutions.
-            </p>
-          </motion.div>
+          </h2>
+          <p className="text-gray-300 max-w-2xl mx-auto text-base sm:text-lg">
+            Proven track record of engineering production AI systems, autonomous agentic automations, model training, and enterprise web solutions.
+          </p>
+        </motion.div>
 
-          {/* Timeline */}
-          <div className="max-w-4xl mx-auto space-y-8">
-            {experiences.map((exp, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                className="relative bg-dark-600/70 backdrop-blur-md rounded-2xl p-6 sm:p-8 border border-white/5 shadow-2xl hover:border-primary-400/30 transition-all duration-300 group"
-              >
+        {/* Experiences List matching Projects layout */}
+        <div className="space-y-16">
+          {experiences.map((exp) => (
+            <motion.div
+              key={exp.id}
+              variants={itemVariants}
+              className="bg-dark-600/70 backdrop-blur-sm rounded-xl overflow-hidden shadow-xl border border-white/5 hover:border-primary-400/30 transition-all duration-300"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="p-6 sm:p-8">
                 {/* Header row */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-dark-500/60 mb-6">
                   <div>
                     <div className="flex items-center gap-3 flex-wrap">
-                      <h3 className="text-2xl font-bold text-white group-hover:text-primary-300 transition-colors">
+                      <h3 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">
                         {exp.role}
                       </h3>
                       {exp.isCurrent && (
@@ -121,8 +199,8 @@ const Experience: React.FC = () => {
                         </span>
                       )}
                     </div>
-                    <div className="flex items-center gap-3 mt-1.5 text-primary-400 font-semibold text-lg">
-                      <Briefcase size={18} />
+                    <div className="flex items-center gap-2 mt-2 text-white font-semibold text-lg">
+                      <Briefcase size={18} className="text-primary-400" />
                       <span>{exp.company}</span>
                     </div>
                   </div>
@@ -140,41 +218,44 @@ const Experience: React.FC = () => {
                 </div>
 
                 {/* Summary */}
-                <p className="text-gray-300 text-base leading-relaxed mb-6 font-normal">
+                <p className="text-gray-300 text-base leading-relaxed mb-8">
                   {exp.summary}
                 </p>
 
-                {/* Key Highlights */}
-                <div className="space-y-3 mb-6">
-                  <h4 className="text-xs uppercase tracking-wider text-gray-400 font-semibold">
-                    Key Contributions & Impact:
-                  </h4>
-                  <ul className="space-y-2.5">
-                    {exp.highlights.map((highlight, hIdx) => (
-                      <li key={hIdx} className="flex items-start text-gray-300 text-sm sm:text-base leading-relaxed">
-                        <CheckCircle2 size={18} className="text-primary-400 mr-2.5 mt-1 shrink-0" />
-                        <span>{highlight}</span>
-                      </li>
-                    ))}
-                  </ul>
+                {/* 3 Step/Feature Cards matching Projects layout */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                  {exp.steps.map((step, sIdx) => (
+                    <motion.div
+                      key={sIdx}
+                      className="bg-dark-700/50 rounded-lg p-5 hover:bg-dark-600/50 transition-colors border border-white/5"
+                      whileHover={{ y: -5 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <div className="flex items-center mb-3">
+                        {step.icon}
+                        <h4 className="text-white font-medium ml-2">{step.title}</h4>
+                      </div>
+                      <p className="text-gray-400 text-sm leading-relaxed">{step.description}</p>
+                    </motion.div>
+                  ))}
                 </div>
 
-                {/* Tech Pills */}
-                <div className="flex flex-wrap gap-2 pt-2 border-t border-dark-500/40">
+                {/* Tech Skills Pills */}
+                <div className="flex flex-wrap gap-2 pt-4 border-t border-dark-500/40">
                   {exp.skills.map((skill, sIdx) => (
                     <span
                       key={sIdx}
-                      className="px-3 py-1 text-xs font-medium rounded-lg bg-dark-700/70 text-gray-300 border border-white/5 group-hover:border-primary-400/20 transition-colors"
+                      className="px-3 py-1 text-xs font-medium rounded-lg bg-dark-700/70 text-gray-300 border border-white/5"
                     >
                       {skill}
                     </span>
                   ))}
                 </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-      </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
     </section>
   );
 };

@@ -66,9 +66,6 @@ const Footer: React.FC = () => {
 
         <div className="flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-3">
           <p>© {new Date().getFullYear()} Vedang Rajoriya. All rights reserved.</p>
-          <p className="flex items-center gap-1">
-            Built with React, TypeScript, Tailwind CSS & Framer Motion
-          </p>
         </div>
       </div>
     </footer>

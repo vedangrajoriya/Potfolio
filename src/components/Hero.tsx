@@ -43,12 +43,6 @@ const Hero: React.FC = () => {
             animate="show"
             className="text-center lg:text-left lg:col-span-7"
           >
-            {/* Status Pill */}
-            <motion.div variants={item} className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-dark-600/80 border border-primary-400/30 text-xs sm:text-sm text-gray-200 mb-6 backdrop-blur-md shadow-lg">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              <span className="text-gray-300">AI Engineer at</span>
-              <span className="font-semibold text-primary-300">ITGeeks</span>
-            </motion.div>
 
             {/* Name */}
             <motion.h1 variants={item} className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-4">
